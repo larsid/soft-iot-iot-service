@@ -6,6 +6,13 @@ The FoT-Gateway-IoT-Service exposes sensor data of IoT system through a RESTful 
 
 ## Installation
 
+To install this bundle, you need install previously these dependencies in karaf:
+```
+bundle:install mvn:org.codehaus.jackson/jackson-jaxrs/1.9.2
+bundle:install mvn:org.codehaus.jackson/jackson-core-asl/1.9.2
+bundle:install mvn:org.codehaus.jackson/jackson-mapper-asl/1.9.2
+```
+
 This module depends of modules [fot-gateway-mapping-devices](https://github.com/WiserUFBA/fot-gateway-mapping-devices) and [fot-gateway-local-storage](https://github.com/WiserUFBA/fot-gateway-local-storage). They need to be installed and started before FoT-Gateway-IoT-Service.
 
 To install this bundle using our custom maven support execute the following commands in Karaf Shell:
