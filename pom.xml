@@ -5,8 +5,8 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<name>FoT-Gateway-IoT-Service</name>
-	<artifactId>fot-gateway-iot-service</artifactId>
+	<name>SOFT-IoT-IoT-Service</name>
+	<artifactId>soft-iot-iot-service</artifactId>
 	<description>Module of SOFT-IoT plataform to implement RESTful IoT Services to access data sensor from connected devices.</description>
 	<groupId>br.ufba.dcc.wiser.soft_iot</groupId>
 	<version>1.0.0</version>
