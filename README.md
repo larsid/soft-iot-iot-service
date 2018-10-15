@@ -1,8 +1,8 @@
-# FoT-Gateway-IoT-Service
+# SOFT-IoT-IoT-Service
 
 ## Introduction
 
-The FoT-Gateway-IoT-Service exposes sensor data of IoT system through a RESTful Web Service. It accesses data stored in local database, managed by [fot-gateway-local-storage](https://github.com/WiserUFBA/fot-gateway-local-storage), allowing users get data and information about sensors in JSON format.
+The FoT-Gateway-IoT-Service exposes sensor data of IoT system through a RESTful Web Service. It accesses data stored in local database, managed by [soft-iot-local-storage](https://github.com/WiserUFBA/soft-iot-local-storage), allowing users get data and information about sensors in JSON format.
 
 ## Installation
 
@@ -13,7 +13,7 @@ bundle:install mvn:org.codehaus.jackson/jackson-core-asl/1.9.2
 bundle:install mvn:org.codehaus.jackson/jackson-mapper-asl/1.9.2
 ```
 
-This module depends of modules [fot-gateway-mapping-devices](https://github.com/WiserUFBA/fot-gateway-mapping-devices) and [fot-gateway-local-storage](https://github.com/WiserUFBA/fot-gateway-local-storage). They need to be installed and started before FoT-Gateway-IoT-Service.
+This module depends of modules [soft-iot-mapping-devices](https://github.com/WiserUFBA/soft-iot-mapping-devices) and [soft-iot-local-storage](https://github.com/WiserUFBA/soft-iot-local-storage). They need to be installed and started before FoT-Gateway-IoT-Service.
 
 To install this bundle using our custom maven support execute the following commands in Karaf Shell:
 
@@ -21,9 +21,9 @@ To install this bundle using our custom maven support execute the following comm
 config:edit org.ops4j.pax.url.mvn 
 config:property-append org.ops4j.pax.url.mvn.repositories ", https://github.com/WiserUFBA/wiser-mvn-repo/raw/master/releases@id=wiser"
 config:update
-bundle:install mvn:br.ufba.dcc.wiser.soft_iot/fot-gateway-mapping-devices/1.0.0
-bundle:install mvn:br.ufba.dcc.wiser.soft_iot/fot-gateway-local-storage/1.0.0
-bundle:install mvn:br.ufba.dcc.wiser.soft_iot/fot-gateway-iot-service/1.0.0
+bundle:install mvn:br.ufba.dcc.wiser.soft_iot/soft-iot-mapping-devices/1.0.0
+bundle:install mvn:br.ufba.dcc.wiser.soft_iot/soft-iot-local-storage/1.0.0
+bundle:install mvn:br.ufba.dcc.wiser.soft_iot/soft-iot-iot-service/1.0.0
 ```
 
 ## How to use
