@@ -36,15 +36,15 @@ http://<servicemix-urls>:<servicemix-port>/cxf/iot-service/devices
 ```
 To get information about specific device:
 ```
-http://<servicemix-urls>:<servicemix-port>/cxf/iot-service/device/{device_id}
+http://<servicemix-urls>:<servicemix-port>/cxf/iot-service/devices/{device_id}
 ```
 To get data sensor of:
 ```
-http://<servicemix-urls>:<servicemix-port>/cxf/iot-service/device/{device_id}/{sensor_id}
+http://<servicemix-urls>:<servicemix-port>/cxf/iot-service/devices/{device_id}/{sensor_id}
 ```
 To get data sensor of in a time-interval:
 ```
-http://<servicemix-urls>:<servicemix-port>/cxf/iot-service/device/{device_id}/{sensor_id}/{start_datetime}/{end_datetime}
+http://<servicemix-urls>:<servicemix-port>/cxf/iot-service/devices/{device_id}/{sensor_id}/{start_datetime}/{end_datetime}
 ```
 For more information about syntax of RESTful Web Service, access:
 ```
