@@ -28,7 +28,7 @@
 				<extensions>true</extensions>
 				<configuration>
 					<instructions>
-						<Export-Package>br.ufba.dcc.wiser.fot.storage</Export-Package>
+						<Export-Package>br.ufba.dcc.wiser.soft-iot-iot-service</Export-Package>
 						<Embed-Dependency>mqtt-client;scope=compile|runtimeinline=false</Embed-Dependency>
 						<Embed-Directory>target/dependency</Embed-Directory>
 						<Embed-StripGroup>true</Embed-StripGroup>

@@ -80,7 +80,7 @@ public class IoTService {
 	@GET
     @Produces("application/json")
 	@Path("devices/{device_id}/{sensor_id}")
-	public Response getSensorData(@PathParam("device_id") String deviceId, @PathParam("sensor_id") String sensorId)
+	public Response getLastSensorData(@PathParam("device_id") String deviceId, @PathParam("sensor_id") String sensorId)
 			throws Exception {
         ResponseBuilder rb;
         XmlErrorClass x = new XmlErrorClass();
@@ -103,6 +103,89 @@ public class IoTService {
                 .allow("OPTIONS")
                 .build();
     }
+	
+	@GET
+    @Produces("application/json")
+	@Path("devices/{device_id}/{sensor_id}/all")
+	public Response getSensorData(@PathParam("device_id") String deviceId, @PathParam("sensor_id") String sensorId)
+			throws Exception {
+        ResponseBuilder rb;
+        XmlErrorClass x = new XmlErrorClass();
+        try{
+        	Device device = fotDevices.getDeviceById(deviceId);
+        	Sensor sensor = device.getSensorbySensorId(sensorId);
+        	List<SensorData> sensorData = localDataController.getSensorData(device, sensor);
+            rb = Response.ok(sensorData);
+        } catch (Exception e) {
+        	e.printStackTrace();
+            x.setStatus(true);
+            x.setMessage(e.getMessage());
+            rb = Response.ok(x);
+        }
+        
+        return rb.header("Access-Control-Allow-Origin", "*")
+                .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
+                .header("Access-Control-Allow-Headers", "Content-Type")
+                .header("Accept", "application/json")
+                .allow("OPTIONS")
+                .build();
+    }
+	
+	@GET
+    @Produces("application/json")
+	@Path("devices/{device_id}/{sensor_id}/aggregated")
+	public Response getLastAggregatedSensorData(@PathParam("device_id") String deviceId, @PathParam("sensor_id") String sensorId)
+			throws Exception {
+        ResponseBuilder rb;
+        XmlErrorClass x = new XmlErrorClass();
+        try{
+        	Device device = fotDevices.getDeviceById(deviceId);
+        	Sensor sensor = device.getSensorbySensorId(sensorId);
+        	SensorData sensorData = localDataController.getLastAggregatedSensorData(device, sensor);
+            rb = Response.ok(sensorData);
+        } catch (Exception e) {
+        	e.printStackTrace();
+            x.setStatus(true);
+            x.setMessage(e.getMessage());
+            rb = Response.ok(x);
+        }
+        
+        return rb.header("Access-Control-Allow-Origin", "*")
+                .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
+                .header("Access-Control-Allow-Headers", "Content-Type")
+                .header("Accept", "application/json")
+                .allow("OPTIONS")
+                .build();
+    }	
+
+	
+	@GET
+    @Produces("application/json")
+	@Path("devices/{device_id}/{sensor_id}/aggregated/all")
+	public Response getAggregatedSensorData(@PathParam("agg_status") int aggStatus, @PathParam("device_id") String deviceId, @PathParam("sensor_id") String sensorId)
+			throws Exception {
+        ResponseBuilder rb;
+        XmlErrorClass x = new XmlErrorClass();
+        try{
+        	Device device = fotDevices.getDeviceById(deviceId);
+        	Sensor sensor = device.getSensorbySensorId(sensorId);
+        	List<SensorData> sensorData = localDataController.getAggregatedSensorData(device, sensor);
+            rb = Response.ok(sensorData);
+        } catch (Exception e) {
+        	e.printStackTrace();
+            x.setStatus(true);
+            x.setMessage(e.getMessage());
+            rb = Response.ok(x);
+        }
+        
+        return rb.header("Access-Control-Allow-Origin", "*")
+                .header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT")
+                .header("Access-Control-Allow-Headers", "Content-Type")
+                .header("Accept", "application/json")
+                .allow("OPTIONS")
+                .build();
+    }
+	
 	
 	@GET
     @Produces("application/json")
