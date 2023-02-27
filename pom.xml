@@ -33,6 +33,24 @@
             <organization>LARSID</organization>
             <organizationUrl>https://github.com/larsid/</organizationUrl>
         </developer>
+        <developer>
+            <name>Jeferson Lima</name>
+            <email>oi_je@hotmail.com</email>
+            <organization>LARSID</organization>
+            <organizationUrl>https://github.com/larsid/</organizationUrl>
+        </developer>
+        <developer>
+            <name>Cassio Prazeres</name>
+            <email>prazeres@ufba.br</email>
+            <organization>WiserUFBA</organization>
+            <organizationUrl>https://github.com/WiserUFBA</organizationUrl>
+        </developer>
+        <developer>
+            <name>Leandro Andrade</name>
+            <email>leojsandrade@gmail.com</email>
+            <organization>WiserUFBA</organization>
+            <organizationUrl>https://github.com/WiserUFBA/</organizationUrl>
+        </developer>
     </developers>
 
     <scm>
